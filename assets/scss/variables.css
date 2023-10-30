@@ -1,0 +1,12 @@
+:root {
+  --main-color: linear-gradient(166deg, #BF3D7B 49.63%, #C3512D 91.91%);
+  --background-overlay: linear-gradient(90deg, rgba(235, 66, 106, 0.20) 0.13%, rgba(235, 66, 106, 0.80) 99.88%);
+  --font-size-small: clamp(0.875rem, 0.83rem + 0.23vw, 1rem);
+  --font-size-medium: clamp(0.875rem, 0.83rem + 0.23vw, 1rem);
+  --font-size-large: clamp(1.375rem, 1.33rem + 0.23vw, 1.5rem);
+  --font-size-larger: clamp(1.875rem, 1.83rem + 0.23vw, 2rem);
+  --line-height-normal: 1.8;
+  --letter-spacing-normal: .1em;
+  --bv: .5rem;
+}
+/*# sourceMappingURL=variables.css.map */
