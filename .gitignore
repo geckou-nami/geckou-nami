@@ -22,3 +22,7 @@ logs
 .env
 .env.*
 !.env.example
+
+#突然追加された謎のSSHのファイル
+12131213
+12131213.pub
