@@ -29,7 +29,7 @@ export default {
 <template>
   <div class="background">
     <NmOfHeader />
-    <NmOfHero />  
+    <NmOfHero />
     <NmOfAbout />
     <NmOfNews />
     <NmOfMember1 />
@@ -78,6 +78,6 @@ export default {
   &::after {
     background-image: linear-gradient(89.85deg, rgba(235, 66, 106, 0.2) 0.13%, rgba(235, 66, 106, 0.8) 99.88%);
     mix-blend-mode  : screen;
-  }   
+  }
 }
 </style>
