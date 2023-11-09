@@ -5,11 +5,13 @@
 <style lang="scss" module>
 
 .background {
-  position: relative;
+  position : fixed;
+  isolation: isolate;
   width    : 100%;
-  height   : 50px;
+  height   : 100%;
   top      : 0;
   left     : 0;
+  z-index  : -100;
 
   &::before,
   &::after {

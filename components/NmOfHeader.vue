@@ -29,7 +29,7 @@
     width          : calc(100% - (var(--bv) * 16));
     height         : calc(100% - (var(--bv) * 16));
     z-index        : 10;
-    /* position       : fixed; */
+    position       : fixed;
     top            : calc(var(--bv) * 8);
     left           : calc(var(--bv) * 8);
 

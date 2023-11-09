@@ -42,8 +42,8 @@
 
   .newsCard {
     display            : flex;
-    width: calc(100% - var(--bv) * 24);
-    height             :  calc(var(--bv) * 26);
+    width              : calc(100% - var(--bv) * 24);
+    height             : calc(var(--bv) * 26);
     background-color   : #E4D2DB;
     box-shadow         : 0 0 64px 0 rgba(47, 7, 26, 0.2);
     border-radius      : 30px;
@@ -75,7 +75,6 @@
       display        : flex;
       flex           : 1 1 auto;
       flex-direction : column;
-      justify-content: space-between;
       justify-content: space-between;
       gap            : calc(var(--bv) * 2);
       padding        : calc(var(--bv) * 4);
