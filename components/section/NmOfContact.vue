@@ -11,6 +11,7 @@
 </template>
 
 <style lang="scss" module>
+@use '~/assets/scss/mixin' as *;
 
 .contactContainer {
   min-height: calc(100vh - var(--bv) * 21);
@@ -19,9 +20,14 @@
   text-align: center;
   justify-content: center;
 
-  p {
-    font-size : var(--font-size-large);
+  .contactText {
+    font-size : var(--font-size-larger);
     line-height: 2;
+
+    @include mediaScreen('tablet') {
+      font-size: var(--font-size-large);
+      text-align: left;
+    }
   }
 
   .button {
@@ -31,6 +37,8 @@
     background-image  : var(--main-color);
     box-shadow        : 0 0 64px 0 rgba(47, 7, 26, 0.2);
     color             : #FFFFFF;
+    font-family     : var(--font-family-rounded);
+    font-weight: bold;
     padding           : 8px 0;
     font-size         : 32px;
     letter-spacing    : 0.1em;

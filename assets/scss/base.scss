@@ -1,17 +1,40 @@
+@use '~/assets/scss/mixin' as *;
 @forward 'variables';
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;500;700&display=swap');
 
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family          : 'M PLUS 1p', sans-serif;
+  color                : var(--white);
   font-size            : var(--font-size-medium);
   font-weight          : 400;
   line-height          : var(--line-height-normal);
   letter-spacing       : var(--letter-spacing-normal);
-  color                : #FFFFFF;
   word-wrap            : break-word;
   font-feature-settings: 'palt';
+}
+
+
+main {
+  flex: 1 1 auto;
+}
+
+p {
+  margin : 0;
+  padding: 0;
+}
+
+i {
+  color: var(--text-color);
+}
+
+small,
+span {
+  display: inline-block;
 }
 
 img {
@@ -31,9 +54,45 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: var(--letter-spacing-normal);
 }
 
+ul, ol, li, dl, dt, dd {
+  margin : 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color          : inherit;
+  transition     : color .2s;
+  text-decoration: none;
+}
+
+em {
+  font-style: normal;
+}
+
 p {
   margin : 0;
   padding: 0;
+}
+
+input,
+option,
+button {
+  color         : var(--text-color);
+  line-height   : var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+button {
+  padding   : 0;
+  border    : none;
+  outline   : none;
+  font      : inherit;
+  color     : inherit;
+  background: none;
 }
 
 main {
@@ -47,4 +106,46 @@ main {
 section {
   padding : calc(var(--bv) * 30) calc(var(--bv) * 4);
   margin: 0 auto;
+
+  @include mediaScreen('mobile') {
+    padding : calc(var(--bv) * 15) calc(var(--bv) * 2);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity  : 0;
+    transform: translateX(-36px);
+  }
+
+  to {
+    opacity  : 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity  : 0;
+    transform: translateY(-36px);
+  }
+
+  to {
+    opacity  : 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes popUp {
+  0% {
+    transform: scale(.8);
+  }
+
+  80% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }

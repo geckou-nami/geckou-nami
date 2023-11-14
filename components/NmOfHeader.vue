@@ -16,6 +16,7 @@
 </template>
 
 <style lang="scss" module>
+@use '~/assets/scss/mixin' as *;
 
 .headerContainer {
   display        : flex;
@@ -29,9 +30,16 @@
     width          : calc(100% - (var(--bv) * 16));
     height         : calc(100% - (var(--bv) * 16));
     z-index        : 10;
-    position       : fixed;
+    /* position       : fixed; */
     top            : calc(var(--bv) * 8);
     left           : calc(var(--bv) * 8);
+
+    @include mediaScreen('tablet') {
+      width : calc(100% - (var(--bv) * 2));
+      height: calc(100% - (var(--bv) * 2));
+      top   : var(--bv);
+      left  : var(--bv);
+    }
 
     .mainLogo {
       width : calc(var(--bv) * 66);

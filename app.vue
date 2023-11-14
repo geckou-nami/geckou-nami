@@ -9,7 +9,7 @@
       <SectionNmOfMember1 />
       <SectionNmOfActivity />
       <SectionNmOfContact />
-      <SectionNmOfRinks />
+      <SectionNmOfLinks />
     </main>
   </div>
 </template>

@@ -44,17 +44,32 @@
 </template>
 
 <style lang="scss" module>
+@use '~/assets/scss/mixin' as *;
 
 .activityContents {
   display        : flex;
   flex-direction : column;
   gap            : calc(var(--bv) * 8);
 
+  @include mediaScreen('mobile') {
+    gap        : calc(var(--bv) * 16);
+  }
+
   .activityCard {
-    display: flex;
-    width     : calc(100% - var(--bv) * 40);
-    gap : calc(var(--bv) * 2);
-    align-items: space-between;
+    display            : flex;
+    width              : calc(100% - var(--bv) * 40);
+    gap                : calc(var(--bv) * 2);
+    align-items        : space-between;
+    animation-name     : slideInLeft;
+    animation-duration : .5s;
+    animation-fill-mode: forwards;
+
+    @include mediaScreen('mobile') {
+      flex-direction: column;
+      align-items: center;
+      width :100%;
+    }
+
     .circle {
       flex           : 0 0 calc(var(--bv) * 18);
       display        : flex;
@@ -67,6 +82,12 @@
       border-radius  : 50%;
       overflow       : hidden;
       position       : relative;
+      box-shadow: 0px 0px 64px 0px rgba(47, 7, 26, 0.20);
+      backdrop-filter: blur(8px);
+
+      /* @include mediaScreen('mobile') {
+        justify-content: center;
+      } */
     }
     .activityTextWrap {
       display       : flex;
@@ -74,20 +95,46 @@
       gap           : calc(var(--bv) * 1.5);
       height        : 100%;
       position      : relative;
-      padding       : var(--bv) 0;
+      padding       : var(--bv);
 
       .activityTitle {
         font-size       : 18px;
         font-weight: bold;
+
+        @include mediaScreen('mobile') {
+        text-align: center;
+        }
       }
     }
     &:nth-child(2) {
-        margin-inline-start: calc(var(--bv) * 16);
+      margin-inline-start: calc(var(--bv) * 16);
+      animation-delay: 0.2s;
+
+      @include mediaScreen('mobile') {
+        margin-inline-start:0;
       }
+    }
 
     &:nth-child(3) {
       margin-inline-start: calc((var(--bv) * 16) * 2);
+      animation-delay: 0.4s;
+
+      @include mediaScreen('mobile') {
+        margin-inline-start:0;
+      }
     }
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity  : 0;
+    transform: translateX(-36px);
+  }
+
+  to {
+    opacity  : 1;
+    transform: translateX(0px);
   }
 }
 </style>
