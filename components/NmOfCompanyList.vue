@@ -1,45 +1,45 @@
 <template>
-  <section>
-    <ul :class="$style.member3Container">
-      <li :class="$style.member3Card">
-        <img src="~/assets/images/logo.png" alt="メンバー紹介">
-      </li>
-      <li :class="$style.member3Card">
-        <img src="~/assets/images/logo.png" alt="メンバー紹介">
-      </li>
-      <li :class="$style.member3Card">
-        <img src="~/assets/images/logo.png" alt="メンバー紹介">
-      </li>
-      <li :class="$style.member3Card">
-        <img src="~/assets/images/logo.png" alt="メンバー紹介">
-      </li>
-      <li :class="$style.member3Card">
-        <img src="~/assets/images/logo.png" alt="メンバー紹介">
-      </li>
-      <li :class="$style.member3Card">
-        <img src="~/assets/images/logo.png" alt="メンバー紹介">
-      </li>
-      <li :class="$style.member3Card">
-        <img src="~/assets/images/logo.png" alt="メンバー紹介">
-      </li>
-      <li :class="$style.member3Card">
-        <img src="~/assets/images/logo.png" alt="メンバー紹介">
-      </li>
-    </ul>
-  </section>
+  <ul :class="$style.member3_container">
+    <li :class="$style.member3_card">
+      <img src="~/assets/images/logo.png" alt="メンバー紹介">
+    </li>
+    <li :class="$style.member3_card">
+      <img src="~/assets/images/logo.png" alt="メンバー紹介">
+    </li>
+    <li :class="$style.member3_card">
+      <img src="~/assets/images/logo.png" alt="メンバー紹介">
+    </li>
+    <li :class="$style.member3_card">
+      <img src="~/assets/images/logo.png" alt="メンバー紹介">
+    </li>
+    <li :class="$style.member3_card">
+      <img src="~/assets/images/logo.png" alt="メンバー紹介">
+    </li>
+    <li :class="$style.member3_card">
+      <img src="~/assets/images/logo.png" alt="メンバー紹介">
+    </li>
+    <li :class="$style.member3_card">
+      <img src="~/assets/images/logo.png" alt="メンバー紹介">
+    </li>
+    <li :class="$style.member3_card">
+      <img src="~/assets/images/logo.png" alt="メンバー紹介">
+    </li>
+  </ul>
 </template>
 
 <style lang="scss" module>
 @use '~/assets/scss/mixin' as *;
 
-ul.member3Container {
+ul.member3_container {
   display        : flex;
   flex-wrap      : wrap;
   justify-content: center;
   gap            : calc(var(--bv) * 8);
+  padding-top: calc(var(--bv) * 28);
 
   @include mediaScreen('mobile') {
-    gap: calc(var(--bv) * 4);
+    gap        : calc(var(--bv) * 4);
+    padding-top: calc(var(--bv) * 10);
   }
 
   li {

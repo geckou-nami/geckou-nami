@@ -1,23 +1,19 @@
 <template>
   <section>
-    <div :class="$style.linksContainer">
-      <div :class="$style.linksCard">
-        <p :class="$style.linksBigTitle">運営会社</p>
-        <p :class="$style.linksSmallTitle">社名</p>
-        <p :class="$style.linksText">株式会社田中旗店</p>
-        <p :class="$style.linksSmallTitle">所在地</p>
-        <p :class="$style.linksText">〒541-0048<br>大阪府大阪市中央区瓦町３丁目２−６</p>
-        <p :class="$style.linksSmallTitle">WEBサイト</p>
+    <div :class="$style.links_container">
+      <dl :class="$style.links_card">
+        <p :class="$style.links_big_title">運営会社</p>
+        <dt :class="$style.links_small_title">社名</dt>
+        <dd :class="$style.links_text">株式会社田中旗店</dd>
+        <dt :class="$style.links_small_title">所在地</dt>
+        <dd :class="$style.links_text">〒541-0048<br>大阪府大阪市中央区瓦町３丁目２−６</dd>
+        <dt :class="$style.links_small_title">WEBサイト</dt>
         <a href="http://www.tanakaflag.jp/">http://www.tanakaflag.jp/</a>
-        <p :class="$style.linksSmallTitle">電話</p>
-        <p :class="$style.linksText">06-6231-4455</p>
-        <p :class="$style.linksSmallTitle">設立</p>
-        <p :class="$style.linksText">大正元年創業</p>
-        <p :class="$style.linksSmallTitle">代表取締役</p>
-        <p :class="$style.linksText">田中 哲</p>
-      </div>
-      <div :class="$style.linksCard">
-        <p :class="$style.linksBigTitle">関連書籍</p>
+        <dt :class="$style.links_small_title">代表取締役</dt>
+        <dd :class="$style.links_text">田中 哲</dd>
+      </dl>
+      <div :class="$style.links_card">
+        <p :class="$style.links_big_title">関連書籍</p>
         <img src="~/assets/images/books.png" alt="成果をあげるライブコマースの教科書">
         <a href="#">Amazon</a>
       </div>
@@ -27,29 +23,29 @@
 
 <style lang="scss" module>
 @use '~/assets/scss/mixin' as *;
-
-.linksContainer {
+.links_container {
   display        : flex;
   justify-content: center;
   gap            : 300px;
 
   @include mediaScreen('mobile')  {
     flex-direction: column;
-    /* gap           : calc(var(--bv) * 16); */
   }
 
-  .linksCard {
+  .links_card {
   display       : flex;
   flex-direction: column;
   text-align    : center;
 
-    .linksBigTitle {
-        font-size: 24px;
+    .links_big_title {
+        font-size: var(--font-size-larger);
+        font-weight: bold;
     }
 
-    .linksSmallTitle {
-        font-size         : 18px;
-        margin-block-start: 28px;
+    .links_small_title {
+        font-size         : var(--font-size-small);
+        font-weight: bold;
+        margin-top: calc(var(--bv) * 8);
     }
 
     img {

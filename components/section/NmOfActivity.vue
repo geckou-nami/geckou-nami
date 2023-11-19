@@ -1,38 +1,38 @@
 <template>
   <section>
-    <div :class="$style.activityContents">
-      <div :class="$style.activityCard">
+    <div :class="$style.activity_contents">
+      <div :class="$style.activity_card">
         <div :class="$style.circle">
           <img src="~/assets/images/activity-1.png" alt="" :class="$style.activityImage">
         </div>
-        <div :class="$style.activityTextWrap">
+        <div :class="$style.activity_text_wrap">
           <p :class="$style.activityTitle">定期セミナー</p>
-          <p :class="$style.activityArticle">
+          <p :class="$style.activity_article">
             ライブコマースに関するセミナー・勉強会を定期的に実施します。
             オフライン開催にすることで横の連携を強めます。<br>
             開催日時・テーマ・お申込みはNEWSよりご確認ください。
           </p>
         </div>
       </div>
-      <div :class="$style.activityCard">
+      <div :class="$style.activity_card">
         <div :class="$style.circle">
           <img src="~/assets/images/activity-2.png" alt="" :class="$style.activityImage">
         </div>
-        <div :class="$style.activityTextWrap">
-          <p :class="$style.activityTitle">コンサルティング</p>
-          <p :class="$style.activityArticle">
+        <div :class="$style.activity_text_wrap">
+          <p :class="$style.activity_title">コンサルティング</p>
+          <p :class="$style.activity_article">
             企業・ブランドのライブコマースの戦略、レポート、コマーサー育成サポートなどを
             ご支援しております。詳しくはお問い合わせよりご連絡ください。
           </p>
         </div>
       </div>
-      <div :class="$style.activityCard">
+      <div :class="$style.activity_card">
         <div :class="$style.circle">
           <img src="~/assets/images/activity-3.png" alt="" :class="$style.activityImage">
         </div>
-        <div :class="$style.activityTextWrap">
-          <p :class="$style.activityTitle">執筆・登壇</p>
-          <p :class="$style.activityArticle">
+        <div :class="$style.activity_text_wrap">
+          <p :class="$style.activity_title">執筆・登壇</p>
+          <p :class="$style.activity_article">
             ライブコマースに関する登壇、取材対応、記事の執筆などを行っています。
             お問い合わせよりご依頼ください。<br>
             過去登壇はこちら
@@ -45,8 +45,7 @@
 
 <style lang="scss" module>
 @use '~/assets/scss/mixin' as *;
-
-.activityContents {
+.activity_contents {
   display        : flex;
   flex-direction : column;
   gap            : calc(var(--bv) * 8);
@@ -55,7 +54,7 @@
     gap        : calc(var(--bv) * 16);
   }
 
-  .activityCard {
+  .activity_card {
     display            : flex;
     width              : calc(100% - var(--bv) * 40);
     gap                : calc(var(--bv) * 2);
@@ -71,25 +70,21 @@
     }
 
     .circle {
-      flex           : 0 0 calc(var(--bv) * 18);
-      display        : flex;
-      align-items    : center;
-      justify-content: center;
+      flex            : 0 0 calc(var(--bv) * 18);
+      display         : flex;
+      align-items     : center;
+      justify-content : center;
       background-color: var(--dark-white);
-      width          : calc(var(--bv) * 18);
-      height         : calc(var(--bv) * 18);
-      padding        : calc(var(--bv) * 4);
-      border-radius  : 50%;
-      overflow       : hidden;
-      position       : relative;
-      box-shadow: 0px 0px 64px 0px rgba(47, 7, 26, 0.20);
-      backdrop-filter: blur(8px);
-
-      /* @include mediaScreen('mobile') {
-        justify-content: center;
-      } */
+      width           : calc(var(--bv) * 18);
+      height          : calc(var(--bv) * 18);
+      padding         : calc(var(--bv) * 4);
+      border-radius   : 50%;
+      overflow        : hidden;
+      position        : relative;
+      box-shadow      : 0px 0px 64px 0px rgba(47, 7, 26, 0.20);
+      backdrop-filter : blur(8px);
     }
-    .activityTextWrap {
+    .activity_text_wrap {
       display       : flex;
       flex-direction: column;
       gap           : calc(var(--bv) * 1.5);
@@ -97,15 +92,16 @@
       position      : relative;
       padding       : var(--bv);
 
-      .activityTitle {
-        font-size       : 18px;
+      .activity_title {
+        font-size  : 18px;
         font-weight: bold;
 
         @include mediaScreen('mobile') {
-        text-align: center;
+          text-align: center;
         }
       }
     }
+
     &:nth-child(2) {
       margin-inline-start: calc(var(--bv) * 16);
       animation-delay: 0.2s;

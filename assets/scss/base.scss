@@ -104,11 +104,14 @@ main {
 }
 
 section {
-  padding : calc(var(--bv) * 30) calc(var(--bv) * 4);
-  margin: 0 auto;
+  width      : 100%;
+  padding    : calc(var(--bv) * 30) calc(var(--bv) * 4);
+  padding-top: calc(var(--bv) * 28);
+  margin     : 0 auto;
 
   @include mediaScreen('mobile') {
-    padding : calc(var(--bv) * 15) calc(var(--bv) * 2);
+    padding    : calc(var(--bv) * 4);
+    padding-top: calc(var(--bv) * 10);
   }
 }
 

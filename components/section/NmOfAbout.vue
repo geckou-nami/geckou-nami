@@ -1,16 +1,16 @@
 <template>
   <div :class="$style.about">
     <section>
-      <div :class="$style.aboutWrap">
-        <div :class="$style.aboutTextSmall">
+      <div :class="$style.about_wrap">
+        <div :class="$style.about_text_mall">
           <p>日本の1対1の接客や、おもてなし、こだわりのものづくりをライブという手段を通して1対1に届けるにはどうあるべきなのかを研究しています。</p>
           <p>ライブは、コマース機能に限らず、企業やブランドと生活者の距離を縮め、コミュニティの形成や強化を行うことができる有効なマーケティング手法でもあります。</p>
         </div>
-        <div :class="$style.aboutTextBig">
+        <div :class="$style.about_text_big">
           <p>デジタルマーケティング領域において、今後多くの企業が取り入れるべき、ライブエンゲージメントを定義し、マーケティング業界への貢献を目指します。</p>
         </div>
-        <img src="~/assets/images/about-1.png" :class="$style.aboutImage1" alt="">
-        <img src="~/assets/images/about-2.png" :class="$style.aboutImage2" alt="">
+        <img src="~/assets/images/about-1.png" :class="$style.about_image1" alt="">
+        <img src="~/assets/images/about-2.png" :class="$style.about_image2" alt="">
       </div>
     </section>
   </div>
@@ -18,8 +18,7 @@
 
 <style lang="scss" module>
 @use '~/assets/scss/mixin' as *;
-
-.aboutWrap {
+.about_wrap {
   display              : grid;
   grid-template-columns: 50% 1fr calc(var(--bv) * 38);
   grid-template-rows   : calc(var(--bv) * 38) 1fr calc(var(--bv) * 38);
@@ -40,7 +39,7 @@
     gap: calc(var(--bv) * 4) 0;
   }
 
-  .aboutTextSmall {
+  .about_text_mall {
     grid-area          : text-small;
     display            : flex;
     flex-direction     : column;
@@ -55,7 +54,7 @@
     }
   }
 
-  .aboutTextBig {
+  .about_text_big {
     grid-area          : text-big;
     font-size          : var(--font-size-larger);
     font-weight        : bold;
@@ -64,20 +63,19 @@
     animation-duration : .3s;
     animation-fill-mode: forwards;
 
-
     @include mediaScreen('mobile') {
       font-size: var(--font-size-large);
       padding  : 0;
     }
   }
 
-  .aboutImage1 {
+  .about_image1 {
     grid-area          : image-1;
     animation-name     : popUp;
     animation-duration : .5s;
     animation-fill-mode: forwards;
   }
-  .aboutImage2 {
+  .about_image2 {
     grid-area          : image-2;
     animation-name     : popUp;
     animation-duration : .5s;

@@ -3,7 +3,7 @@
 </template>
 
 <style lang="scss" module>
-
+@use '~/assets/scss/mixin' as *;
 .background {
   position : fixed;
   isolation: isolate;

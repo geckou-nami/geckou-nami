@@ -1,12 +1,12 @@
 <template>
   <div id="accordionMenu">
     <input type="checkbox" id="open" />
-    <label for="open" class="menuBtn">
-      <span class="topBar"></span> <!-- 上の線 -->
-      <span class="centerBar"></span> <!-- 中の線 -->
-      <span class="underBar"></span> <!-- 下の線 -->
+    <label for="open" class="menu_button">
+      <span class="top_bar"></span>
+      <span class="center_bar"></span>
+      <span class="under_bar"></span>
     </label>
-    <nav class="innerMenu">
+    <nav class="inner_menu">
       <h3>日本ライブコマース協会</h3>
       <ul>
         <li>
@@ -36,66 +36,60 @@
 
 <style lang="scss">
 @use '~/assets/scss/mixin' as *;
-/*** ボタン全体 ***/
+
 #accordionMenu {
   display        : flex;
   justify-content: flex-end;
 }
 
-.menuBtn{
+.menu_button{
   display : block;
-  position: relative;  /*線の起点*/
-  width   : 50px;      /*ボタンの幅*/
-  height  : 50px;      /*ボタンの高さ*/
-  cursor  : pointer;   /*クリック可能を伝える*/
-  z-index : 100;       /*最前面*/
+  position: relative;
+  width   : 50px;
+  height  : 50px;
+  cursor  : pointer;
+  z-index : 100;
 }
 
-  /*** ボタンの三本線（共通） ***/
-.menuBtn span{
+.menu_button span{
   position     : absolute;
-  width        : 40%;                  /*線の長さ*/
-  height       : 2px;                  /*線の太さ*/
+  width        : 40%;
+  height       : 2px;
   border-radius: 20%;
-  left         : calc(50% - 40% / 2);  /*中央から長さの半分を引く*/
-  background   : #BF3D7B;              /*線の色*/
+  left         : calc(50% - 40% / 2);
+  background   : #BF3D7B;
   transition   : .4s;
 }
 
-  /* 順に上・中・下の線 */
-.topBar{
+.top_bar{
   top: calc(35% - 2px / 2);
 }
-.centerBar{
+.center_bar{
   top: calc(50% - 2px / 2);
 }
-.underBar{
+.under_bar{
   top: calc(65% - 2px / 2);
 }
 
-  /** クリック後(✔が入った後)の線 **/
-  /*上の線*/
-#open:checked ~ .menuBtn > .topBar {
-  top      : calc(50% - 2px / 2);
-  transform: rotate(45deg);
-}
-  /*中の線*/
-#open:checked ~ .menuBtn > .centerBar{
-  opacity: 0;
-}
-  /*下の線*/
-#open:checked ~ .menuBtn > .underBar{
-  top      : calc(50% - 2px / 2);
-  transform: rotate(-45deg);
-}
-
-  /*** チェックボックスは非表示に ***/
 #open {
   display: none;
 }
 
-  /*** メニュー内容 ***/
-.innerMenu{
+  #open:checked ~ .menu_button > .top_bar {
+  top      : calc(50% - 2px / 2);
+  transform: rotate(45deg);
+}
+
+#open:checked ~ .menu_button > .center_bar{
+  opacity: 0;
+}
+
+#open:checked ~ .menu_button > .under_bar{
+  top      : calc(50% - 2px / 2);
+  transform: rotate(-45deg);
+}
+
+.inner_menu{
   position   : fixed;
   top        : 0;
   left       : 0;
@@ -105,9 +99,9 @@
   padding    : 50px 60px;
   background : #eee;
   opacity    : 0;
-  visibility : hidden;                      /*標準で非表示*/
+  visibility : hidden;
   transition : .5s;
-  z-index    : 99;                          /*ボタンより背面(小さい値)*/
+  z-index    : 99;
   color      : #BF3D7B;
   font-size  : 32px;
   font-weight: bold;
@@ -116,7 +110,6 @@
   h3 {
     color         : #000;
     padding-bottom: calc(var(--bv) * 6);
-    
   }
 
   p {
@@ -125,19 +118,18 @@
     font-size  : var(--font-size-medium);
   }
 }
-  /*リスト*/
-.innerMenu ul{
+
+.inner_menu ul{
   list-style  : none;
   padding-left: 0;
 }
-  /*リンク*/
-.innerMenu a{
+
+.inner_menu a{
   color          : inherit;
   text-decoration: none;
 }
 
-  /*** クリックで(✔が入ったら)メニューを表示 ***/
-#open:checked ~ .innerMenu{
+#open:checked ~ .inner_menu{
   transform : translateY(0);
   opacity   : 1;
   visibility: visible;
